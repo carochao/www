@@ -35,7 +35,7 @@ background: radial-gradient(ellipse at center, rgba(76,76,76,1) 0%, rgba(43,43,4
   position: absolute;
   border-radius: 3px;
   top: 2.5%;
-  left: 5%;
+  left: 2%;
   width: 85%;
   height: 110%;
   width: 100%;
@@ -66,12 +66,7 @@ background: radial-gradient(ellipse at center, rgba(76,76,76,1) 0%, rgba(43,43,4
   font-weight: 600;
   font-family: "Avenir", sans-serif;
 }
-.row{
-  width: 100%;
-  
 
-  align-items: center;
-}
 .row .qtr{
   width:100%;
 }
@@ -417,3 +412,7 @@ input.add-event-edit:-ms-input-placeholder {
   border-bottom: 1px solid #fff;
 }
 
+#footer2 {
+ 
+  margin: 0 auto;
+}
