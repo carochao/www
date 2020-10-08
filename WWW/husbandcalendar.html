@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+ <link href="css/husbandcalendar.css" rel="stylesheet">
+</style>
+<!-- Custom styles -->
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    
+</head>
+
+<script src="https://kit.fontawesome.com/54e7f7f74d.js" crossorigin="anonymous"></script>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #057c68fd;">
+    <div class="container">
+      <button class="btn btn-success" onclick="goBack()"><i class="far fa-arrow-alt-circle-left"></i></button>
+    <img src="img/icon500.png" width="50" height="50" alt="">  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>     
+
+<div class="row h-100">
+  <div class="col-md-12">
+    <div style="padding-top: 25px;"></div>
+    <h1 class="cover-heading text-center">HUSBAND</h1>
+    <p class="lead text-center">To upload your own image press the image bellow </p>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div id="profile-container">
+      <image id="profileImage" src="https://i.ibb.co/ZYB3kYk/man1.png" />
+    </div>
+    <input id="imageUpload" type="file"
+            name="profile_photo" placeholder="Photo" required="" capture>
+
+    <h4>
+      <span id="result-name"></span>
+      <span id="result-surname">
+    </h4>
+  </div>
+
+        
+
+<div class="container">
+  <div class="row">
+    
+
+
+<!-- Calendar -->
+<div class="calendar" id="calendar-app">
+  <div class="calendar--day-view" id="day-view">
+    <span class="day-view-exit" id="day-view-exit">&times;</span>
+    <span class="day-view-date" id="day-view-date">MAY 29 2016</span>
+    <div class="day-view-content">
+      <div class="day-highlight">
+        You <span class="day-events" id="day-events">had no events for today</span>. &nbsp; <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date>Add a new event?</span>
+      </div>
+      <div class="day-add-event" id="add-day-event-box" data-active="false">
+        <div class="row">
+          <div class="half">
+            <label class="add-event-label">
+               Name of event
+              <input type="text" class="add-event-edit add-event-edit--long" placeholder="New event" id="input-add-event-name">
+             
+            </label>
+          </div>
+          <div class="qtr">
+            <label class="add-event-label">
+          Start Time
+              <input type="text" class="add-event-edit" placeholder="8:15" id="input-add-event-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+              <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-start-ampm" data-options="a,p,am,pm">
+            </label>
+          </div>
+          <div class="qtr">
+            <label class="add-event-label">
+          End Time
+              <input type="text" class="add-event-edit" placeholder="9" id="input-add-event-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+              <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-end-ampm" data-options="a,p,am,pm">
+            </label>
+          </div>
+          <div class="half">
+            <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="add-event-save" class="event-btn--save event-btn">save</a>
+            <a tabindex="0" id="add-event-cancel" class="event-btn--cancel event-btn">cancel</a>
+          </div>
+        </div>
+        
+      </div>
+      <div id="day-events-list" class="day-events-list">
+        
+      </div>
+      <div class="day-inspiration-quote" id="inspirational-quote">
+        Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso
+      </div>
+    </div>
+  </div>
+  <div class="calendar--view" id="calendar-view">
+    <div class="cview__month">
+      <span class="cview__month-last" id="calendar-month-last">Apr</span>
+      <span class="cview__month-current" id="calendar-month">May</span>
+      <span class="cview__month-next" id="calendar-month-next">Jun</span>
+    </div>
+    <div class="cview__header">Sun</div>
+    <div class="cview__header">Mon</div>
+    <div class="cview__header">Tue</div>
+    <div class="cview__header">Wed</div>
+    <div class="cview__header">Thu</div>
+    <div class="cview__header">Fri</div>
+    <div class="cview__header">Sat</div>
+    <div class="calendar--view" id="dates">
+    </div>
+  </div>
+  <div class="footer">
+    <span><span id="footer-date" class="footer__link">Today is May 30</span></span>    
+  </div>
+</div>
+</div>
+
+
+
+
+<div style="padding-top: 20px;"></div>
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div id="hobbie1-container">
+           <image id="datesimage" img class="card-img-top" src="https://cdn.pixabay.com/photo/2012/04/12/10/45/zodiac-29420_960_720.png" />
+        </div>
+        <input id="imageUpload" type="file" 
+               name="datesphoto" placeholder="Photo" required="" capture>
+                                       
+         <div class="card-body"style="background-color: #17a87db4;">
+          
+          <h5>Important dates:</h5>
+          <h4>
+            <span id="result-dateofbirth"></span>
+          </h4>
+          <h4>
+            <span id="result-weadding"></span>
+          </h4>
+        </div>
+       </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div id="city-container">
+          <image id="cityImage" img class="card-img-top" src="https://i.ibb.co/vxvFR9B/city.jpg" />
+    </div>
+       <input id="imageUpload" type="file" 
+         name="profile_photo" placeholder="Photo" required="" capture>
+      
+         <div class="card-body" style="background-color: #17a87db4;">
+          
+          <h5>City</h5>
+          <h4>
+            <span id="result-city"></span>
+          </h4>
+        </div>
+       </div>
+    </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <div id="honeymoon-container">
+                <image id="honeymoonImage" img class="card-img-top" src="https://i.ibb.co/hfgNztj/Beautiful-landscape-of-beach-sea-ocean-with-empty-chair-deck-and-umbrella-nearly-coconut-palm-tree-w.jpg" />
+           </div>
+            <input id="imageUpload" type="file" 
+              name="profile_photo" placeholder="Photo" required="" capture>
+
+              <div class="card-body" style="background-color: #17a87db4;">
+                
+                <h5>Honeymoon</h5>
+                <h4>
+                  <span id="result-honeymoon"></span>
+                </h4>
+              </div>
+             </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+              <div id="profession-container">
+                <image id="professionImage" img class="card-img-top" src="https://i.ibb.co/WtDGzy3/work.jpg" />
+          </div>
+             <input id="imageUpload" type="file" 
+               name="profile_photo" placeholder="Photo" required="" capture>
+            
+               <div class="card-body" style="background-color: #17a87db4;">
+                
+                <h5>Profession</h5>
+                <h4>
+                  <span id="result-profession"></span>
+                </h4>
+              </div>
+             </div>
+          </div>
+
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+              <div id="hobbie1-container">
+                 <image id="hobbie1Image" img class="card-img-top" src="https://i.ibb.co/Ld7PG3z/paint.jpg" />
+              </div>
+              <input id="imageUpload" type="file" 
+                     name="profile_photo" placeholder="Photo" required="" capture>
+                                             
+               <div class="card-body"style="background-color: #17a87db4;">
+                
+                <h5>Hobbies</h5>
+                <h4>
+                  <span id="result-hobbies"></span>
+                </h4>
+              </div>
+             </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+              <div id="interests-container">
+                 <image id="interestsImage" img class="card-img-top" src="https://images.unsplash.com/photo-1554151447-b9d2197448f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" />
+              </div>
+              <input id="imageUpload" type="file" 
+                     name="profile_photo" placeholder="Photo" required="" capture>
+                                             
+               <div class="card-body"style="background-color: #17a87db4;">
+                
+                <h5>Interests</h5>
+                <h4>
+                  <span id="result-inter"></span>
+                </h4>
+              </div>
+             </div>
+          </div>
+
+          
+         
+  
+<div style="padding-top: 10px;"></div>
+<div class="row">
+  <div class="col-md-12">
+    <p class="lead text-center">Presents sugestions based on hobbies and interests</p>
+
+<a href="shopping1.html" class="btn btn-lg btn-primary">Shop now</a> 
+
+
+<div style="padding-bottom: 30px;"></div>
+
+
+
+
+
+
+<!-- partial -->
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-storage.js"></script>
+
+
+<script src="js/imagereplace.js"></script>
+<script type="text/javascript" src="js/calendarresult.js" ></script>
+<script  src="js/script.js"></script>
+<script src="js/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+</body>
+</html>

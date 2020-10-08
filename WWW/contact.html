@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="https:stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/> 
+    <link rel="stylesheet" href="css/contact.css" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Email Template</title>
+  </head>
+  <script src="https://kit.fontawesome.com/54e7f7f74d.js" crossorigin="anonymous"></script>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #057c68fd;">
+      <div class="container">
+          <button class="btn btn-success" onclick="goBack()"><i class="far fa-arrow-alt-circle-left"></i></button>
+          <img src="img/icon500.png" width="50" height="50" alt="">
+        <a class="navbar-brand" href="#">Contact</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About</a>
+            </li>
+                       
+          </ul>
+        </div>
+      </div>
+    </nav><br>
+  
+
+    <h1>Drop Us a Message</h1>
+    <p>We will get back to you ASAP.</p>
+    <form class="contact-form">
+      <label for="">Name</label><br />
+      <input class="name" type="text" placeholder="name" /><br />
+      <label for="">Email</label><br />
+      <input class="email" type="email" placeholder="email" /><br />
+      <label for="">Message</label><br />
+      <textarea
+        class="message"
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="message"
+      ></textarea
+      ><br />
+      <button type="submit"onclick="myfunction()">Submit</button><br>
+    </form>
+<script>
+function myfunction() {
+  alert("Message Sent! :)");
+}
+</script>
+
+     <!-- Footer -->
+ <footer class="py-1" style="background-color: #057c68fd;">
+  <div class="container">
+      <button class="btn btn-success" onclick="goBack()"><i class="far fa-arrow-alt-circle-left"></i></button>
+      <p class="m-0 text-center text-white">Copyright &copy; Love Calendar 2020</p>
+  </div>
+  <!-- /.container -->
+</footer>
+    
+    
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/index.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

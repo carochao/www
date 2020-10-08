@@ -1,0 +1,43 @@
+
+
+html,
+body {
+  height: 100%;
+}
+
+
+
+
+body p {
+  padding-left: 10px;
+  padding-right: 10px;
+   color: white;
+   text-shadow: 0 0 10px rgba(red, green, blue, alpha 0.5);
+}
+
+
+
+body {
+    background: url("../img/backgroundblur.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .card {
+    background-color: rgba(245, 245, 245, 1);
+    opacity: .8;
+      
+  }
+
+  .card h5{
+color: rgb(0, 0, 0);
+
+  }
+
+  .card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}

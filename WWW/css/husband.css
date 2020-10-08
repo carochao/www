@@ -1,0 +1,98 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+
+
+body p {
+  padding-left: 10px;
+  padding-right: 10px;
+   color: white;
+   text-shadow: 0 0 10px rgba(red, green, blue, alpha 0.5);
+}
+
+
+body h1 {
+  padding-left: 10px;
+  padding-right: 10px;
+   color: rgb(12, 196, 156);
+   text-shadow: 0 0 10px rgba(red, green, blue, alpha 0.5);
+}
+
+body {
+    background: url("../img/backgroundblur.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  
+
+#imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+
+#profile-container {
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#profile-container img {
+    width: 250px;
+    height: 250px;
+}
+
+.form-main {
+  width: auto;
+  margin: auto;
+  padding-left: 40px;
+  padding-right: 50px;
+}
+
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+.form-outline {
+
+  color: rgb(5, 221, 196);
+}
+
+*
+{
+text-align: center !important;
+margin: auto !important;
+}
+
+

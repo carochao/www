@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Paulo Resende">
+    <meta name="generator" content="Jekyll v4.1.1">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+ 
+
+  
+    <title>Register</title>
+
+
+
+  
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+  </head>
+  <script src="https://kit.fontawesome.com/54e7f7f74d.js" crossorigin="anonymous"></script>
+
+
+  <body class="text-center">
+    <form class="form-signin">
+  <img class="mb-4" src="img/icon500.png" alt="" width="250" height="250">
+  <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
+  <label for="email" class="sr-only">Email address</label>
+  <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+  <label for="password" class="sr-only">Password</label>
+  <input type="password" id="password" class="form-control" placeholder="Password" required>
+  <div class="checkbox mb-3">
+  <label for="confirmPassword" class="sr-only"> Password</label>
+  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+  <div class="checkbox mb-3">   
+ 
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" id="loginBtn" onclick="createUser(e)">Register</button>
+  
+  <div>
+    <div style="padding-top: 25px;"></div>
+  <button class="btn btn-success" onclick="goBack()"><i class="far fa-arrow-alt-circle-left"></i></button>
+  </div>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+</form>
+    
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBi_UDpdtoruaBV5_T-1HPkWMdPKZeP8jE",
+    authDomain: "lovecalendarapp-fe8f9.firebaseapp.com",
+    databaseURL: "https://lovecalendarapp-fe8f9.firebaseio.com",
+    projectId: "lovecalendarapp-fe8f9",
+    storageBucket: "lovecalendarapp-fe8f9.appspot.com",
+    messagingSenderId: "171300955166",
+    appId: "1:171300955166:web:7da2de2e414d6db7f5ba0f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+
+   
+<script src="js/signin.js" type="text/javascript"></script> 
+<script src="js/index.js"></script>           
+        
+<body>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+</body>
+</body>
+
+
+
+
+
+
+</html>

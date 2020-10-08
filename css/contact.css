@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding-top: 70px; 
+  
+    font-family: inter;
+    font-weight: normal;
+    background: rgb(245, 245, 245);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 35px;
+    color: rgb(232, 243, 243);
+  }
+  
+  p {
+    text-align: center;
+    margin: 15px auto 0px auto;
+    font-size: 16px;
+    width: 80%;
+    color: beige;
+  }
+  .contact-form {
+ 
+    margin: 35px auto 0px auto;
+    width: 80%;
+  }
+  
+  .contact-form label {
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .contact-form input {
+    padding: 12px 20px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(73, 63, 63);
+    background: rgba(164, 223, 220, 0.616);
+    font-size: 18px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    width: 100%;
+  
+  }
+  
+  .contact-form input:focus {
+    border-bottom: 2px solid #1a883f;
+  }
+  
+  .contact-form textarea {
+    padding: 12px 20px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(59, 51, 51);
+    background: rgba(164, 223, 220, 0.616);
+    font-size: 18px;
+    border-radius: 3px;
+    width: 100%;
+    font-family: inter;
+    font-weight: normal;
+  }
+  
+  .contact-form textarea:focus {
+    border-bottom: 2px solid #1a883f;
+  }
+  
+  .contact-form button {
+    font-size: 19px;
+    width: 100%;
+    margin-top: 25px;
+    border: none;
+    padding: 12px 20px;
+    background-color: #25c9df;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border-bottom: 3px solid #055164;
+   
+   
+  }
+  
+  .contact-form button:hover {
+    background-color: #1a883f;
+    border-bottom: 3px solid #22b352;
+  }
+  
+  @media all and (min-width: 1000px) {
+    .contact-form {
+      width: 40%;
+    }
+  }
+  
+  @media all and (min-width: 1080px) {
+    .contact-form {
+      width: 30%;
+    }
+  }
+
+
+body {
+    background: url("../img/backgroundblur.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  footer {
+    
+    position: relative;
+    padding:0px;
+    margin-top:20px;
+    font-size:15px;
+}

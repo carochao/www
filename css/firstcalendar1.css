@@ -1,0 +1,33 @@
+
+
+html,
+
+
+
+
+body {
+    background: url("../img/backgroundblur.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .container {
+    max-width: 978px;
+    width: calc(100% - 46px);
+    height: 300px;
+    margin: 0 auto;
+    padding-left: 23px;
+    padding-right: 23px;
+  text-align: center;
+  vertical-align: middle;
+  }
+
+
+  
+body p {
+  color: white;
+  text-shadow: 0 0 10px rgba(red, green, blue, alpha 0.5);
+  
+}

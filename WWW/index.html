@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+ body {
+     font-family: sans-serif;
+     background: url("img/background.jpg") no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+ }
+ input {
+     display: block;
+     padding: 10px 20px;
+     font-size: 16px;
+     outline: none;
+     margin: 20px 0px;
+
+ }
+ button {
+     background-color: teal;
+     border: solid 1px; color: white;
+     font-size: 16px;
+     color: white;
+     padding: 10px 30px;
+     cursor: pointer;
+     margin-bottom: 20px;
+ }
+ button:hover {
+     background-color: transparent;
+     color: gray;
+
+    
+ }
+
+ #login {
+     display: none;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-51%, -50%);
+ }
+
+ #signup {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-51%, -50%);
+ }
+
+ #loggedin {
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-51%, -50%);
+     display: none;
+ }
+
+a {
+    color: rgb(248, 248, 248);
+}
+
+*
+{
+text-align: center !important;
+
+}
+
+
+</style>
+<body>
+    
+    <div id="signup">
+      <img class="mb-4" src="img/icon500.png" alt="" width="250" height="250">
+        <h1>REGISTER</h1>
+        
+        <input type="email" id="email-s" textarea placeholder="Email"></textarea>
+        <input type="password" id="password-s" textarea placeholder="Password"></textarea>
+            <button id="signupBtn">Register</button><br>
+            <a id="login-ref" href="#">Log in instead</a>
+    </div>
+
+    <div id="login">
+      <img class="mb-4" src="img/icon500.png" alt="" width="250" height="250">
+        <h1>LOGIN</h1>
+        <input type="email" id="email-l" textarea placeholder="Email"></textarea>
+        <input type="password" id="password-l" textarea placeholder="Password"></textarea>
+            <button id="loginBtn">Login</button><br>
+            <a id="signup-ref" href="#">Register instead</a>
+    </div>
+    
+
+    <div id="loggedin">
+      <img class="mb-4" src="img/icon500.png" alt="" width="250" height="250">
+        <h1>LOGGED IN</h1>
+       <p>You are now logged In</p>
+            <button id="LogoutBtn">Logout</button><br>
+            <ul class="nav nav-pills justify-content-center">
+              <li class="nav-item">
+            <a class="nav-link active" id="signup-ref" href="firstcalendar1.html">Lets go</a>
+          </li>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#login-ref').click(function(){
+            $('#login').show();
+            $('#signup').hide();
+        })
+        $('#signup-ref').click(function(){
+            $('#signup').show();
+            $('#login').hide();
+    })
+
+    })
+</script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBi_UDpdtoruaBV5_T-1HPkWMdPKZeP8jE",
+    authDomain: "lovecalendarapp-fe8f9.firebaseapp.com",
+    databaseURL: "https://lovecalendarapp-fe8f9.firebaseio.com",
+    projectId: "lovecalendarapp-fe8f9",
+    storageBucket: "lovecalendarapp-fe8f9.appspot.com",
+    messagingSenderId: "171300955166",
+    appId: "1:171300955166:web:7da2de2e414d6db7f5ba0f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+$(Document).ready(function(){
+    $('#signupBtn').click(function(){
+        var email = $('#email-s').val()
+        var password = $('#password-s').val()
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+      var errorCode = error.code;
+       var errorMessage = error.message;
+       alert(errorMessage);
+  // ...
+        
+  });
+})
+
+$('#loginBtn').click(function(){
+    var email = $('#email-l').val()
+    var password = $('#password-l').val()
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+     var errorCode = error.code;
+     var errorMessage = error.message;
+     alert(errorMessage);
+  // ...
+  });
+
+})
+
+firebase.auth().onAuthStateChanged(function(user){
+    if(user) {
+        $('#signup').hide()
+        $('#login').hide()
+        $('#loggedin').show()
+    }
+})
+$('#LogoutBtn').click(function(){
+    firebase.auth().signOut().then(function() {
+      $('#signup').hide()
+        $('#login').show()
+        $('#loggedin').hide()// Sign-out successful.
+      }).catch(function(error) {
+      // An error happened.
+      });
+  })
+
+})
+
+</script>
+
+</body>
+
+</html>
