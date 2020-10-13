@@ -23,7 +23,7 @@ body p {
 
 
 body {
-    background: url("../img/backgroundblur.jpg") no-repeat center center fixed;
+    background: url("../img/hands.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -81,7 +81,9 @@ body {
   p {text-align: center;}
   div {text-align: center;}
 
-
+h1 {
+  color: rgb(12, 196, 156);
+}
 
  
 

@@ -16,7 +16,7 @@
     text-align: center;
     margin-top: 60px;
     font-size: 35px;
-    color: rgb(232, 243, 243);
+    color: rgb(12, 109, 88);
   }
   
   p {
@@ -24,7 +24,7 @@
     margin: 15px auto 0px auto;
     font-size: 16px;
     width: 80%;
-    color: beige;
+    color: rgb(8, 14, 12);
   }
   .contact-form {
  
@@ -78,7 +78,7 @@
     margin-top: 25px;
     border: none;
     padding: 12px 20px;
-    background-color: #25c9df;
+    background-color:rgb(12, 196, 156);
     color: #fff;
     border-radius: 3px;
     cursor: pointer;
@@ -107,7 +107,7 @@
 
 
 body {
-    background: url("../img/backgroundblur.jpg") no-repeat center center fixed;
+    background: url("../img/candy.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

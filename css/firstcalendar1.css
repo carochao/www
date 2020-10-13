@@ -6,11 +6,13 @@ html,
 
 
 body {
-    background: url("../img/backgroundblur.jpg") no-repeat center center fixed;
+    font-family: "Arial Black", Gadget, sans-serif;
+    background: url("../img/book1.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    
   }
 
   .container {
@@ -26,8 +28,12 @@ body {
 
 
   
-body p {
-  color: white;
-  text-shadow: 0 0 10px rgba(red, green, blue, alpha 0.5);
-  
+
+
+h1 {
+  color: rgb(39, 240, 213);
+}
+
+h5 {
+  color: rgb(57, 245, 245);
 }

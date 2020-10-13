@@ -31,7 +31,7 @@ body h1 {
 }
 
 body {
-    background: url("../img/backgroundblur.jpg") no-repeat center center fixed;
+    background: url("../img/hands.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -86,7 +86,7 @@ body {
 
 .form-outline {
 
-  color: rgb(5, 221, 196);
+  color: rgb(20, 247, 220);
 }
 
 *
